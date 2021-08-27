@@ -1,0 +1,23 @@
+<div class="container px-5 mt-3">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <h1>Editing Book</h1>
+       <%= render 'layouts/errors', model: @book %>
+        <%= form_with model:@book, local:true do |f| %>
+          <div class="form-group">
+            <%= f.label :Title %><br>
+            <%= f.text_field :title %>
+          </div>
+          <div class="form-group">
+            <%= f.label :Opinion %><br>
+            <%= f.text_area :body %>
+          </div>
+          <div class="form-group">
+            <input type="submit" name="commit" value="Update Book" class="btn btn-success" data-disable-with="Update Book" />
+          </div>
+        <% end %>
+  		<%= link_to 'Show',book_path(@book) %> |
+  		<%= link_to 'Back',books_path %>
+   </div>
+  </div>
+</div>
